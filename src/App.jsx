@@ -6,10 +6,12 @@ import SignupPage from "./SignupPage.jsx";
 import ThreatDetectionPage from "./ThreatDetectionPage.jsx";
 import DashboardPage from "./DashboardPage.jsx";
 import ProtectedRoute from "./ProtectedRoute";
+import Splash from "./Splash.jsx";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Splash />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
 
