@@ -25,7 +25,7 @@ const SignupPage = () => {
       );
       console.log("User created:", userCredential.user);
       // Navigate only after a successful signup
-      navigate("/dashboard");
+      navigate("/ThreatDetectionPage");
     } catch (error) {
       setError(error.message);
       console.error("Error:", error);
@@ -37,7 +37,7 @@ const SignupPage = () => {
       const result = await signInWithGoogle();
       console.log("Google user:", result.user);
       // treat Google sign-in as signup flow and navigate
-      navigate("/dashboard");
+      navigate("/ThreatDetectionPage");
     } catch (error) {
       setError(error.message);
       console.error("Google sign-in error:", error);

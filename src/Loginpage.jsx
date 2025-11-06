@@ -47,7 +47,7 @@ const Loginpage = () => {
       localStorage.setItem("isUserLoggedIn", "true");
 
       // ✅ Navigate to dashboard
-      navigate("/dashboard", { replace: true });
+      navigate("/ThreatDetectionPage", { replace: true });
 
       // ✅ Disable browser back button
       setTimeout(() => {
@@ -75,7 +75,7 @@ const Loginpage = () => {
       await signInWithGoogle();
       localStorage.setItem("isUserLoggedIn", "true");
 
-      navigate("/dashboard", { replace: true });
+      navigate("/ThreatDetectionPage", { replace: true });
 
       setTimeout(() => {
         window.history.pushState(null, "", window.location.href);
@@ -102,7 +102,7 @@ const Loginpage = () => {
   // ✅ Redirect if already logged in
   useEffect(() => {
     if (user) {
-      navigate("/dashboard", { replace: true });
+      navigate("/ThreatDetectionPage", { replace: true });
     }
   }, [user, navigate]);
 

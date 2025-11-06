@@ -2,7 +2,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { auth } from "./Firebase";
 
-const ProtectedRoute = ({ redirectTo = "/" }) => {
+const ProtectedRoute = ({ redirectTo = "/home" }) => {
   const [checking, setChecking] = useState(true);
   const [user, setUser] = useState(null);
 

@@ -39,9 +39,12 @@ const Home = () => {
               <div className="bg-linear-to-br from-purple-500 to-cyan-500 p-2 rounded-lg">
                 <Shield className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">
-                CyberShield AI
-              </span>
+              <div>
+                <h1 className="text-xl font-bold text-white">CyberShield</h1>
+                <p className="text-xs text-slate-400">
+                  6G IoT Security Platform
+                </p>
+              </div>
             </div>
             <div className="flex items-center space-x-6">
               <a

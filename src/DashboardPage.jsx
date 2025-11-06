@@ -15,6 +15,7 @@ const DashboardPage = () => {
   const nav = useNavigate();
 
   // ✅ Redirect if not authenticated
+  // ✅ Redirect if not authenticated
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (!user) {
@@ -24,28 +25,28 @@ const DashboardPage = () => {
     return unsubscribe;
   }, [nav]);
 
-  // ✅ Optional: Disable back navigation while logged in
+  // ✅ SAFE back navigation handling
   useEffect(() => {
     const handlePopState = () => {
-      if (auth.currentUser) {
-        window.history.pushState(null, "", window.location.href);
+      // Only navigate if user logs out and tries to go back
+      if (!auth.currentUser) {
+        nav("/", { replace: true });
       }
     };
-    window.history.pushState(null, "", window.location.href);
+
     window.addEventListener("popstate", handlePopState);
+
     return () => {
       window.removeEventListener("popstate", handlePopState);
     };
-  }, []);
+  }, [nav]);
 
   // ✅ Logout function
   const handleLogout = async () => {
     try {
       await auth.signOut();
       localStorage.removeItem("isUserLoggedIn");
-      nav("/", { replace: true }); // replaces dashboard history
-      // optional hard reload to ensure complete cleanup:
-      // window.location.reload();
+      nav("/", { replace: true });
     } catch (error) {
       console.error("Logout failed:", error);
     }
