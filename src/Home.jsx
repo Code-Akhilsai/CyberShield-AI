@@ -47,24 +47,6 @@ const Home = () => {
               </div>
             </div>
             <div className="flex items-center space-x-6">
-              <a
-                href="#features"
-                className="text-slate-300 hover:text-white transition text-sm font-medium"
-              >
-                Features
-              </a>
-              <a
-                href="#architecture"
-                className="text-slate-300 hover:text-white transition text-sm font-medium"
-              >
-                Architecture
-              </a>
-              <a
-                href="#about"
-                className="text-slate-300 hover:text-white transition text-sm font-medium"
-              >
-                About
-              </a>
               <button
                 onClick={() => navigateToLogin()}
                 className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition text-sm font-medium"
@@ -162,21 +144,17 @@ const Home = () => {
                       BLOCKED
                     </span>
                   </div>
-                  <div className="p-4 bg-slate-700/30 rounded-lg">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-slate-400">
-                        Detection Rate
-                      </span>
-                      <span className="text-sm font-semibold text-white">
-                        95%
-                      </span>
+                  <div className="flex items-center space-x-3 p-4 bg-orange-900/20 border border-orange-500/30 rounded-lg">
+                    <AlertTriangle className="w-5 h-5 text-orange-400" />
+                    <div className="flex-1">
+                      <p className="text-white font-semibold">Ransomware</p>
+                      <p className="text-sm text-slate-400">
+                        Source: 198.0.0.21
+                      </p>
                     </div>
-                    <div className="w-full bg-slate-700 rounded-full h-2">
-                      <div
-                        className="bg-linear-to-r from-purple-500 to-cyan-500 h-2 rounded-full"
-                        style={{ width: "95%" }}
-                      ></div>
-                    </div>
+                    <span className="text-xs px-2 py-1 bg-orange-500/20 text-orange-400 rounded">
+                      BLOCKED
+                    </span>
                   </div>
                 </div>
               </div>

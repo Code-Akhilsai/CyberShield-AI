@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { Shield, Mail, Lock, Eye, EyeOff } from "react-feather";
 import { useNavigate } from "react-router-dom";
-import { signUpWithEmail, signInWithGoogle } from "./Firebase";
+import { signUpWithEmail, signInWithGoogle, auth, db } from "./Firebase";
+import { sendEmailVerification, onAuthStateChanged } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
 const SignupPage = () => {
+  const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -18,29 +21,39 @@ const SignupPage = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
+    setError("");
+    setMessage("");
+
     try {
       const userCredential = await signUpWithEmail(
         formData.email,
         formData.password
       );
-      console.log("User created:", userCredential.user);
-      // Navigate only after a successful signup
-      navigate("/ThreatDetectionPage");
+      const user = userCredential.user;
+
+      // ✅ Send verification email
+      await sendEmailVerification(user);
+      setMessage(
+        "Verification email sent! Please check your inbox and verify your email before continuing."
+      );
     } catch (error) {
       setError(error.message);
-      console.error("Error:", error);
     }
   };
 
   const handleGoogleSignIn = async () => {
     try {
       const result = await signInWithGoogle();
-      console.log("Google user:", result.user);
-      // treat Google sign-in as signup flow and navigate
+      const user = result.user;
+
+      await setDoc(doc(db, "Users", user.uid), {
+        email: user.email,
+        createdAt: new Date(),
+      });
+
       navigate("/ThreatDetectionPage");
     } catch (error) {
       setError(error.message);
-      console.error("Google sign-in error:", error);
     }
   };
 
@@ -58,6 +71,29 @@ const SignupPage = () => {
       document.body.style.overflow = "";
     };
   }, []);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        // 🔁 Keep checking every few seconds if the user verifies
+        const interval = setInterval(async () => {
+          await user.reload(); // Refresh user data
+          if (user.emailVerified) {
+            clearInterval(interval); // stop checking
+            await setDoc(doc(db, "Users", user.uid), {
+              email: user.email,
+              createdAt: new Date(),
+            });
+            navigate("/ThreatDetectionPage");
+          }
+        }, 3000); // checks every 3 seconds
+
+        return () => clearInterval(interval);
+      }
+    });
+
+    return () => unsubscribe();
+  }, [navigate]);
 
   return (
     <div className="min-h-screen w-screen bg-linear-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
@@ -87,6 +123,11 @@ const SignupPage = () => {
           {error && (
             <div className="mb-4 p-3 bg-red-500/20 border border-red-500 rounded-lg text-red-300 text-sm">
               {error}
+            </div>
+          )}
+          {message && (
+            <div className="mb-4 p-3 bg-green-500/20 border border-green-500 rounded-lg text-green-300 text-sm">
+              {message}
             </div>
           )}
 
