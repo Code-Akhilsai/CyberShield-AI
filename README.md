@@ -32,3 +32,34 @@ It provides real-time cyber threat detection and visualization for IoT and 6G ne
 ```bash
 git clone https://github.com/Code-Akhilsai/CyberShield-AI.git
 cd CyberShield-AI
+
+2️⃣ Install Dependencies
+cd frontend
+npm install
+npm run dev
+
+3️⃣ Configure Firebase
+
+Add your Firebase project configuration to firebaseConfig.js.
+
+4️⃣ Deploy
+
+🌍 Frontend: Netlify
+
+🔥 Backend: Firebase
+
+🤖 Model: Railway
+
+🌐 Deployment
+
+Frontend: Hosted on Netlify
+
+Backend: Firebase (Firestore + Auth)
+
+AI Model: Deployed on cloud platform
+
+🔗 Live Demo: https://cybershield123.netlify.app
+
+🧾 License
+
+🆓 Open-source under the MIT License
