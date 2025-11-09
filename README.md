@@ -1,80 +1,34 @@
-⚡ CyberShield-AI
+<h1 align="center" style="font-size: 42px;">⚡ CyberShield-AI ⚡</h1>
+<h3 align="center" style="font-size: 22px;">🧠 AI-Based Cyber Threat Detection System for IoT & 6G Networks</h3>
 
-🧠 AI-Based Cyber Threat Detection System
+---
 
-🚀 Overview
+## 🚀 Overview  
+CyberShield-AI is a **Generative AI-powered cyber threat detection system** built using **React + Vite**, **Firebase**, and a **GAN + Transformer model** deployed on **Railway**, with the frontend hosted on **Netlify**.  
+It provides real-time cyber threat detection and visualization for IoT and 6G networks.
 
-CyberShield-AI is a web app that uses Generative AI (GAN + Transformer) to detect and classify cyber threats in IoT and 6G networks.
-It combines a React + Vite frontend, Firebase backend, and an AI model deployed on Railway, with web hosting on Netlify.
+---
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack  
+- 🎨 **Frontend:** React.js + Vite  
+- 🔥 **Backend:** Firebase (Firestore + Auth)  
+- 🤖 **AI Model:** GAN + Transformer deployed on Railway  
+- 🌐 **Hosting:** Netlify  
 
-🎨 Frontend: React.js + Vite
+---
 
-🔥 Backend: Firebase (Firestore + Auth)
+## ✨ Features  
+- ⚡ Real-time cyber threat detection  
+- 🔒 Firebase Authentication & Firestore integration  
+- 🤝 Live API connection with deployed AI model  
+- 📊 Visualization of logs and threat categories  
+- 📱 Responsive and fast Vite-based frontend  
 
-🤖 AI Model: Deployed on Railway
+---
 
-🌐 Hosting: Netlify
+## ⚙️ Setup  
 
-✨ Features
-
-⚡ Real-time cyber threat detection
-
-🔒 Firebase authentication & Firestore integration
-
-🤝 Live API connection with deployed AI model
-
-📊 Visualization of results and logs
-
-📱 Responsive Vite-based frontend
-
-⚙️ Setup
-
-Clone the repo
-
+### 1️⃣ Clone the Repository  
+```bash
 git clone https://github.com/Code-Akhilsai/CyberShield-AI.git
 cd CyberShield-AI
-
-
-Install dependencies
-
-cd frontend
-npm install
-npm run dev
-
-
-Add Firebase config
-Paste your Firebase credentials in firebaseConfig.js.
-
-Set model API
-Create a .env file and add:
-
-VITE_MODEL_API=https://your-railway-app-url/predict
-
-
-Deploy
-
-🌍 Frontend → Netlify
-
-🧩 Model → Railway
-
-🤖 AI Model Info
-
-Architecture: GAN + Transformer
-
-Dataset: Edge-IIoT Cybersecurity Dataset
-
-Accuracy: ≈ 95%
-
-Goal: Detect IoT/6G cyberattacks efficiently in real time
-
-👨‍💻 Developer
-
-Yelati Akhil Sai
-
-💻 GitHub: Code-Akhilsai
-
-🧾 License
-
-🆓 Open-source under the MIT License
