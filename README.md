@@ -41,7 +41,7 @@ npm run dev
 
 3️⃣ Configure Firebase
 
-Add your Firebase project configuration to firebaseConfig.js.
+Add your Firebase project configuration to Firebase.js.
 
 4️⃣ Deploy
 
