@@ -1,10 +1,10 @@
 <h1 align="center" style="font-size: 42px;">⚡ CyberShield-AI ⚡</h1>
-<h3 align="center" style="font-size: 22px;">🧠 AI-Based Cyber Threat Detection System for IoT & 6G Networks</h3>
+<h3 align="center" style="font-size: 22px;">🧠 AI-Based Cyber Threat Hunting System for IoT & 6G Networks</h3>
 
 ---
 
 ## 🚀 Overview  
-CyberShield-AI is a **Generative AI-powered cyber threat detection system** built using **React + Vite**, **Firebase**, and a **GAN + Transformer model** deployed on **Railway**, with the frontend hosted on **Netlify**.  
+CyberShield-AI is a **Generative AI-powered cyber threat hunting system** built using **React + Vite**, **Firebase**, and a **GAN + Transformer model** deployed on **Railway**, with the frontend hosted on **Netlify**.  
 It provides real-time cyber threat detection and visualization for IoT and 6G networks.
 
 ---
@@ -58,7 +58,7 @@ Frontend: Hosted on Netlify
 
 Backend: Firebase (Firestore + Auth)
 
-AI Model: Deployed on cloud platform
+AI Model: Deployed on Railway
 
 🔗 Live Demo: https://cybershield123.netlify.app
 
