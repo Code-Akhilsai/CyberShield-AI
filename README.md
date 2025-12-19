@@ -58,7 +58,7 @@ Frontend: Hosted on Netlify
 
 Backend: Firebase (Firestore + Auth)
 
-AI Model: Deployed on Railway
+AI Model: Deployed on Hugging face
 
 🔗 Live Demo: https://cybershield123.netlify.app
 
