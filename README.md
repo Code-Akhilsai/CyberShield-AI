@@ -49,7 +49,7 @@ Add your Firebase project configuration to Firebase.js.
 
 🔥 Backend: Firebase
 
-🤖 Model: Railway
+🤖 Model: Hugging face
 ```
 
 ### 🌐 Deployment
