@@ -1,16 +1,69 @@
-# React + Vite
+<h1 align="center" style="font-size: 42px;">⚡ CyberShield-AI ⚡</h1>
+<h3 align="center" style="font-size: 22px;">🧠 AI-Based Cyber Threat Hunting System for IoT & 6G Networks</h3>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🚀 Overview  
+CyberShield-AI is a **Generative AI-powered cyber threat hunting system** built using **React + Vite**, **Firebase**, and a **GAN + Transformer model** deployed on **Railway**, with the frontend hosted on **Netlify**.  
+It provides real-time cyber threat detection and visualization for IoT and 6G networks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🛠️ Tech Stack  
+- 🎨 **Frontend:** React.js + Vite  
+- 🔥 **Backend:** Firebase (Firestore + Auth)  
+- 🤖 **AI Model:** GAN + Transformer deployed on Railway  
+- 🌐 **Hosting:** Netlify  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features  
+- ⚡ Real-time cyber threat detection  
+- 🔒 Firebase Authentication & Firestore integration  
+- 🤝 Live API connection with deployed AI model  
+- 📊 Visualization of logs and threat categories  
+- 📱 Responsive and fast Vite-based frontend  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ⚙️ Setup  
+```bash
+1️⃣ Clone the Repository  
+
+git clone https://github.com/Code-Akhilsai/CyberShield-AI.git
+cd CyberShield-AI
+
+2️⃣ Install Dependencies
+
+cd frontend
+npm install
+npm run dev
+
+3️⃣ Configure Firebase
+
+Add your Firebase project configuration to Firebase.js.
+
+4️⃣ Deploy
+
+🌍 Frontend: Netlify
+
+🔥 Backend: Firebase
+
+🤖 Model: Hugging face
+```
+
+### 🌐 Deployment
+
+Frontend: Hosted on Netlify
+
+Backend: Firebase (Firestore + Auth)
+
+AI Model: Deployed on Hugging face
+
+🔗 Live Demo: https://cybershield123.netlify.app
+
+🔗 Model source code: https://github.com/Code-Akhilsai/model
+
+### 🧾 License
+
+🆓 Open-source under the MIT License
