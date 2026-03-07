@@ -10,6 +10,7 @@ import {
   query,
   orderBy,
   limit,
+  where,
 } from "firebase/firestore";
 import { app } from "./Firebase";
 import { Network, Cpu, Database } from "lucide-react";
@@ -52,8 +53,12 @@ const ThreatDetectionPage = () => {
 
   // 🕒 Fetch last 5 uploaded files
   useEffect(() => {
+    const user = auth.currentUser;
+    if (!user) return;
+
     const q = query(
       collection(db, "model_jobs"),
+      where("userId", "==", user.uid),
       orderBy("createdAt", "desc"),
       limit(5)
     );
@@ -103,11 +108,18 @@ const ThreatDetectionPage = () => {
     try {
       setUploading(true);
       const text = await file.text();
+      const user = auth.currentUser;
+      if (!user) {
+        alert("User not authenticated");
+        return;
+      }
+
       const docRef = await addDoc(collection(db, "model_jobs"), {
         filename: file.name,
         csvText: text,
         status: "pending",
         result: null,
+        userId: user.uid,
         createdAt: new Date(),
       });
       alert("File uploaded! Model will process it shortly.");
@@ -515,3 +527,4 @@ const ThreatDetectionPage = () => {
 };
 
 export default ThreatDetectionPage;
+//comments
