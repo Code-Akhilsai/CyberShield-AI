@@ -46,7 +46,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-center space-x-6">
+            <div className="hidden items-center space-x-6 md:flex">
               <button
                 onClick={() => navigateToLogin()}
                 className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition text-sm font-medium"
